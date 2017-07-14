@@ -9,6 +9,9 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @comment = Comment.new #cannot use article.comments.new as that already saves the empty comment and shows it
+    @comment.article_id = @article.id #need to manually assign id because of 'mass-assignment'
+    #mass-assignment: assigning multiple values to attributes via a single assignment operator, which can lead to assignments that should not be allowed
   end
 
   def new
