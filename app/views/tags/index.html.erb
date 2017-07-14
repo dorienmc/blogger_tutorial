@@ -1,0 +1,15 @@
+<h1> All tags </h1>
+
+<% if @tags.size == 0 %>
+    No tags added yet
+<% else %>
+    <ul id="tags">
+      <% @tags.each do |tag| %>
+          <li>
+            <%= link_to tag.name, tag_path(tag), class: 'tag_title', id: "tag_#{tag.id}" %>
+          </li>
+      <% end %>
+    </ul>
+<% end %>
+
+<!--TODO add link and method to create new tags-->
