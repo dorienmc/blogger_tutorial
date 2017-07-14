@@ -1,0 +1,22 @@
+<!--Partial for new/edit article form-->
+<!--Partials always start with an '_'-->
+
+<%= form_for(@article) do |f| %>
+    <ul>
+      <% @article.errors.full_messages.each do |error| %>
+          <li><%= error %></li>
+      <% end %>
+    </ul>
+
+    <p>
+      <%= f.label :title %><br/>
+      <%= f.text_field :title %>
+    </p>
+
+    <p>
+      <%= f.label :body %><br/>
+      <%= f.text_area :body %>
+    </p>
+
+    <p><%= f.submit %></p>
+<% end %>
