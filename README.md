@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+[![Stories in Ready](https://badge.waffle.io/dorienmc/blogger_tutorial.svg?label=ready&title=Ready)](http://waffle.io/dorienmc/blogger_tutorial)
