@@ -12,21 +12,20 @@
 <p class="flash">
   <%= flash.notice %>
 </p>
-<div id="container">
-  <div id="content">
-    <%= yield %>
-    <hr>
-    <h6>
-      <% if logged_in? %>
-          <%= "Logged in as #{current_user.email}" %>
-          <%= link_to '(logout)', logout_path %>
-      <% else %>
-          <%= 'Logged out' %>
-          <%= link_to '(login)', login_path %>
-      <% end %>
-    </h6>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-2 blog-sidebar">
+      <%= render partial: 'layouts/sidebar' %>
+    </div>
+    <div class="col-sm-9 col-md-10 blog-main">
+      <%= yield %>
+    </div>
   </div>
 </div>
+
+<footer class="blog-footer">
+  Rails app build for the jumpstart tutorial.
+</footer>
 
 </body>
 </html>

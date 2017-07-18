@@ -1,8 +1,8 @@
-<h1> All articles </h1>
+<h1 class="page-header"> All articles </h1>
 
-<ul id="articles">
+<ul class="list-group">
   <% @articles.each do |article| %>
-      <li>
+      <li class="list-group-item">
         <%= link_to article.title, article_path(article), class: 'article_title',
                     id: "article_#{article.id}" %>
       </li>
@@ -10,5 +10,7 @@
 </ul>
 
 <% if logged_in? %>
-    <%= link_to 'Create a New Article', new_article_path, class: 'new_article' %>
+    <button type="button" class="btn btn-default">
+      <%= link_to 'Create a New Article', new_article_path, class: 'new_article' %>
+    </button>
 <% end %>
