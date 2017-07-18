@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  # Allow non-users to create a comment, but not edit/delete etc.
+  before_filter :require_login, except: [:create]
 
   def create
     @comment = Comment.new(comment_params)
