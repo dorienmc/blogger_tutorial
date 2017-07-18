@@ -3,6 +3,9 @@ class ArticlesController < ApplicationController
   # returns us a hash of the request parameters.
   include ArticlesHelper
 
+  # Require login for new, create, edit, update and destroy. But not for index, show
+  before_filter :require_login, except: [:index, :show] #or only: [:new, :create, :edit, :update, :destroy]
+
   def index
     @articles = Article.all
   end

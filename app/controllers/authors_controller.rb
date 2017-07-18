@@ -5,6 +5,9 @@ class AuthorsController < ApplicationController
   # When the app is first setup we can create an account, then new users can only be created by a logged in user.
   before_filter :zero_authors_or_authenticated, only: [:new, :create]
 
+  # Require login on all actions except new and create
+  before_filter :require_login, except: [:new, :create]
+
   # GET /authors
   # GET /authors.json
   def index
